@@ -19,3 +19,27 @@ const rollAnimation = [
     color: "white",
   },
 ];
+
+const rollOptions = {
+  duration: 3000,
+  iterations: Infinity,
+};
+
+const roll = ball.animate(rollAnimation, rollOptions);
+
+pause.addEventListener("click", () => roll.pause());
+play.addEventListener("click", () => {
+  roll.playbackRate = 1;
+  roll.play();
+});
+reverse.addEventListener("click", () => roll.reverse());
+
+speedUp.addEventListener(
+  "click",
+  () => (roll.playbackRate = roll.playbackRate * 2)
+);
+
+slowDown.addEventListener(
+  "click",
+  () => (roll.playbackRate = roll.playbackRate / 2)
+);
